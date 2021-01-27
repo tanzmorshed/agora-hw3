@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Video Calling</title>
+        <link rel="stylesheet" href="styles.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="flexContainer">
+            <div class="left-pane">
+                <div class="logoSmall">
+                    <img class="logoElement" src="agoraLogo.png"/>
+                </div>
+                <form action="./videoCall.html" onsubmit="return false">
+                    <span class="headingText">
+                        Join A Chat!
+                    </span>
+                    <input type="text" id="username" placeholder="Username" value="JohnDoe123">
+                    <input type="text" id="channelName" placeholder="ChannelName" value="Agora">
+                    <button class="submitButton" id="join" onclick ="showUser();">Join</button>
+                    <div class="participantsContainer">
+                        <span class="participantsText">Participants</span>
+                        <div id="participants">  </div>
+                    </div>
+                </form>
+                
+            </div>
+            <div class="right-container">
+            <div class="right-pane">
+                <div id="SelfStream">
+                </div>
+                <div id="remoteStream">
+                </div>
+            </div>
+        </div>
+        </div>
+        <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.0.js"></script>
+        <script src="agorartc.js"></script>
+        <script>
+            function showUser() {
+                let participantUser = document.getElementById('username').value;
+                const div = document.querySelector("participants");
+
+                const span = document.createElement("span");
+                span.textContent = participantUser;
+                div.appendChild(span);
+                
+                /*create div for another participant 
+                $('#participants').append($('<div/>', { id: "temp"}))
+
+                let div = document.getElementById("temp");
+                div.setAttribute("id", participantUser);
+                
+                document.getElementById($(participantUser)).value = participantUser;*/
+
+            }
+        </script>
+    </body>
+</html>
