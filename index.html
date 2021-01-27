@@ -11,19 +11,20 @@
                 <div class="logoSmall">
                     <img class="logoElement" src="agoraLogo.png"/>
                 </div>
-                <form action="./videoCall.html" onsubmit="return false">
-                    <span class="headingText">
-                        Join A Chat!
-                    </span>
+                
+                <span class="headingText">
+                    Join A Chat!
+                </span>
                     <input type="text" id="username" placeholder="Username" value="JohnDoe123">
                     <input type="text" id="channelName" placeholder="ChannelName" value="Agora">
-                    <button class="submitButton" id="join" onclick ="showUser();">Join</button>
+                    <button class="submitButton" id="join">Join</button>
                     <div class="participantsContainer">
                         <span class="participantsText">Participants</span>
-                        <div id="participants">  </div>
+                            <ul id= "participants">
+
+                            </ul>
+                        
                     </div>
-                </form>
-                
             </div>
             <div class="right-container">
             <div class="right-pane">
@@ -36,24 +37,15 @@
         </div>
         <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.0.js"></script>
         <script src="agorartc.js"></script>
-        <script>
-            function showUser() {
-                let participantUser = document.getElementById('username').value;
-                const div = document.querySelector("participants");
 
-                const span = document.createElement("span");
-                span.textContent = participantUser;
-                div.appendChild(span);
+            
                 
-                /*create div for another participant 
+                <!--create div for another participant 
                 $('#participants').append($('<div/>', { id: "temp"}))
 
                 let div = document.getElementById("temp");
                 div.setAttribute("id", participantUser);
                 
-                document.getElementById($(participantUser)).value = participantUser;*/
-
-            }
-        </script>
+                document.getElementById($(participantUser)).value = participantUser;*/ -->
     </body>
 </html>

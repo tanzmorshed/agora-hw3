@@ -2,6 +2,12 @@ let handlefail = function(err){
     console.log(err)
 }
 
+function showUser(username) {
+    let particDiv = document.getElementById("participants");
+    let listElement = document.createElement("li");
+    listElement.textContent = username;
+    particDiv.appendChild(listElement); 
+} 
 
 function addVideoStream(streamId){
     console.log()
@@ -17,6 +23,8 @@ document.getElementById("join").onclick = function () {
     let channelName = document.getElementById("channelName").value;
     let Username = document.getElementById("username").value;
     let appId = "dd02efac322a401eb6dd6871f2de3cd1";
+
+    showUser(Username);
 
     let client = AgoraRTC.createClient({
         mode: "live",

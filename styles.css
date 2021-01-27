@@ -113,3 +113,6 @@ input{
 .participantsText{
     font-size: 20px;
 }
+li{
+    list-style-type: none;
+}
