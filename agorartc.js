@@ -7,6 +7,7 @@ function showUser(username) {
     let listElement = document.createElement("li");
     listElement.textContent = username;
     particDiv.appendChild(listElement); 
+    console.log("success")
 } 
 
 function addVideoStream(streamId){
