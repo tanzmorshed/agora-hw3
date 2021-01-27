@@ -61,6 +61,5 @@ document.getElementById("join").onclick = function () {
         addVideoStream(stream.getId());  
         stream.play(stream.getId());
     })
-    
     showUser(Username);
 }
